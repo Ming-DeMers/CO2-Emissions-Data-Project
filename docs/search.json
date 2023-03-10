@@ -60,7 +60,15 @@
     "href": "about.html",
     "title": "About",
     "section": "",
+<<<<<<< HEAD
     "text": "This project was developed by todo For INFO 2950: Introduction to Data Science at Cornell University. The team is comprised of the following team members.\n\nCat person: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\n…"
+=======
+<<<<<<< HEAD
+    "text": "This project was developed by [Totoro] For INFO 2950: Introduction to Data Science at Cornell University. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\n…"
+=======
+    "text": "This project was developed by [Toto] For INFO 2950: Introduction to Data Science at Cornell University. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\n…"
+>>>>>>> 27fda9c1f8513fb989fc50b041fa934952417655
+>>>>>>> c44df72a3cf3ec8885b79c57da2e454c3d01c5f2
   },
   {
     "objectID": "pre-registration.html",

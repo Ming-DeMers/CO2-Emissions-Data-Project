@@ -4,7 +4,12 @@ format: html
 editor: visual
 ---
 
+<<<<<<< HEAD
 This project was developed by todo For [INFO 2950: Introduction to Data Science](https://info2950.infosci.cornell.edu) at Cornell University. The team is comprised of the following team members.
+=======
+This project was developed by **\[Toto\]** For [INFO 2950: Introduction to Data Science](https://info2950.infosci.cornell.edu) at Cornell University. The team is comprised of the following team members.
+
+>>>>>>> c44df72a3cf3ec8885b79c57da2e454c3d01c5f2
 
 -   Cat person: One sentence description of Team member 1 (e.g., year, major, etc.).
 -   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
