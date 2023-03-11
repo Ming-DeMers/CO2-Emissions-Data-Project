@@ -67,9 +67,13 @@ library(skimr)
 
 -   Identify the source of the data.
 
+    Our World In Data, CO₂ and Greenhouse Gas Emissions by Hannah Ritchie, Max Roser and Pablo Rosado.
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
 -   Write a brief description of the observations.
+
+    The observations are the CO2, CH4, and NO2 produced from various industries, the GDP, and the populations per country per year.
 
 ## Research question
 
@@ -82,5 +86,6 @@ library(skimr)
 ```{r}
 #| label: load-data-3
 
-# add code here
+pollution <- read_csv("data/global_emissions.csv")
+glimpse(pollution)
 ```
