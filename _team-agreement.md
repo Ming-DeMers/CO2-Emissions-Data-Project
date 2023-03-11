@@ -2,7 +2,7 @@
 editor: visual
 ---
 
-# Team Aggrement
+# Team Aggreement
 
 Working together as a team is critical for your success on this project. Conflicts are normal and to be expected. It's best to develop a plan for handling conflicts before they arise.
 
@@ -10,7 +10,7 @@ Working together as a team is critical for your success on this project. Conflic
 
 ## Team name
 
-TODO
+Toto
 
 ## To what goals do we all commit?
 
