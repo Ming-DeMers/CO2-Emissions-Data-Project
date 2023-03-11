@@ -2,7 +2,7 @@
 editor: visual
 ---
 
-# Team Aggreement
+# Team Agreement
 
 Working together as a team is critical for your success on this project. Conflicts are normal and to be expected. It's best to develop a plan for handling conflicts before they arise.
 
