@@ -284,23 +284,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="introduction-and-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and data</h2>
 <ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
+<li><p>Identify the source of the data.</p>
+<p>Our World In Data, CO₂ and Greenhouse Gas Emissions by Hannah Ritchie, Max Roser and Pablo Rosado.</p></li>
+<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p>
+<p>The data set was first made available on 8/7/2020 and was collected by taking data from a number of other data sets including but not limited to the Statistical review of world energy (from BP), International energy data (from EIA), and Global carbon budget - Fossil CO2 emissions (from Global Carbon Project).</p></li>
+<li><p>Write a brief description of the observations.</p>
+<p>The observations are the CO2, CH4, and NO2 produced from various industries, the GDP, and the populations per country per year.</p></li>
 </ul>
 </section>
 <section id="research-question-2" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-2">Research question</h2>
 <ul>
-<li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
+<li><p>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</p>
+<p>1) Choose a country from each continent. For each country, how has the total amount of CO2 emissions changed over time?</p>
+<p>2) How does the change in GDP affect the total CO2 emissions of a country?</p></li>
+<li><p>A description of the research topic along with a concise statement of your hypotheses on this topic.</p>
+<p>We want to research the changes in global CO2 emissions and change over time or in accordance to changes in a country’s GDP. Specifically, we want to examine how global CO2 emissions may be different for countries in different parts of the world.</p></li>
+<li><p>Identify the types of variables in your research question. Categorical? Quantitative?</p>
+<p>Quantitative variables (emissions, GDP)</p>
+<p>Categorical variables (country)</p></li>
 </ul>
 </section>
 <section id="glimpse-of-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pollution <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/global_emissions.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2484 Columns: 20
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): Country.Name, Country.Code
+dbl (18): Year, Country.GDP, Country.Population, Emissions.Production.CH4, E...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(pollution)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 2,484
+Columns: 20
+$ Year                                 &lt;dbl&gt; 1992, 1993, 1994, 1995, 1996, 199…
+$ Country.Name                         &lt;chr&gt; "Afghanistan", "Afghanistan", "Af…
+$ Country.Code                         &lt;chr&gt; "AFG", "AFG", "AFG", "AFG", "AFG"…
+$ Country.GDP                          &lt;dbl&gt; 12677538816, 9834580992, 79198571…
+$ Country.Population                   &lt;dbl&gt; 14485543, 15816601, 17075728, 181…
+$ Emissions.Production.CH4             &lt;dbl&gt; 7.13, 7.21, 7.47, 7.83, 8.67, 9.4…
+$ Emissions.Production.N2O             &lt;dbl&gt; 2.89, 2.93, 2.76, 2.88, 3.12, 3.4…
+$ Emissions.Production.CO2.Cement      &lt;dbl&gt; 0.046, 0.047, 0.047, 0.047, 0.047…
+$ Emissions.Production.CO2.Coal        &lt;dbl&gt; 0.022, 0.018, 0.015, 0.015, 0.007…
+$ Emissions.Production.CO2.Gas         &lt;dbl&gt; 0.363, 0.352, 0.338, 0.322, 0.308…
+$ Emissions.Production.CO2.Oil         &lt;dbl&gt; 0.927, 0.894, 0.860, 0.824, 0.780…
+$ Emissions.Production.CO2.Flaring     &lt;dbl&gt; 0.022, 0.022, 0.022, 0.022, 0.022…
+$ Emissions.Production.CO2.Other       &lt;dbl&gt; 0.000000e+00, 0.000000e+00, 2.220…
+$ Emissions.Production.CO2.Total       &lt;dbl&gt; 1.379, 1.333, 1.282, 1.230, 1.165…
+$ `Emissions.Global Share.CO2.Cement`  &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.01, 0.0…
+$ `Emissions.Global Share.CO2.Coal`    &lt;dbl&gt; 0.00, 0.00, 0.00, 0.00, 0.00, 0.0…
+$ `Emissions.Global Share.CO2.Gas`     &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.01, 0.0…
+$ `Emissions.Global Share.CO2.Oil`     &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.01, 0.0…
+$ `Emissions.Global Share.CO2.Flaring` &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.01, 0.0…
+$ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00, 0.0…</code></pre>
+</div>
 </div>
 
 
