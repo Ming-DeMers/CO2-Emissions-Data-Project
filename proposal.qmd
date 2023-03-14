@@ -43,7 +43,6 @@ library(skimr)
 
 -   Identify the source of the data.
 
-<<<<<<< HEAD
     The data's source is from the website data.austintexas.gov. The data is collected from the Austin Animal Center.
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
@@ -53,17 +52,6 @@ library(skimr)
 -   Write a brief description of the observations.
 
     The observations are one outcome per animal per encounter, which includes their Animal ID, their Name (if they have one), the date of their outcome, their date of birth, their outcome type, the type of animal they are, their sex upon outcome, their age upon outcome, their breed, and their color.
-=======
-    -   The data's source is from the website data.austintexas.gov. The data is collected from the Austin Animal Center.
-
--   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
-
-    -   The was originally created on February 5, 2016. The first data that was collected began on October 1, 2013 and continues onto the present. The data was originally collected by documenting the procedures done within the Austin Animal Center animal shelter.
-
--   Write a brief description of the observations.
-
-    -   The cats and dogs that enter the shelter and the procedures that were done to them. The data includes the name of them, ID associated with them, the color, breed, and the outcome of the visit.
->>>>>>> 99f1f8dc5dbca829d7a3e819bf85b7660f4f28f2
 
 ## Research question
 
