@@ -43,17 +43,41 @@ library(skimr)
 
 -   Identify the source of the data.
 
-    -   The data's source is from the website data.austintexas.gov. The data is collected from the Austin Animal Center. It was originally created on February 5, 2016.
+    The data's source is from the website data.austintexas.gov. The data is collected from the Austin Animal Center.
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+    The data was originally created on February 5, 2016. It was originally collected by recording, upon intake of each animal, their unique given Animal ID, name (if they have one), physical characteristics, and then each animal's outcome type was recorded, along with the date of their outcome and age upon outcome.
+
 -   Write a brief description of the observations.
+
+    The observations are one outcome per animal per encounter, which includes their Animal ID, their Name (if they have one), the date of their outcome, their date of birth, their outcome type, the type of animal they are, their sex upon outcome, their age upon outcome, their breed, and their color.
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+
+    1.) Does the type of animal have an impact on the likelihood of adoption being the outcome?
+
+    2.) Does the breed of animal have an impact on the likelihood of euthanasia being the outcome?
+
+    3.) What is the relationship between animal age and their outcome?
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+    We would like to research how different animal characteristics impact their outcomes. Our hypotheses are:
+
+    1.) The type of animal does have an impact on the likelihood of adoption being the outcome, with Cats and Dogs being the two animal types with the highest probability of adoption.
+
+    2.) The breed of animal does have an impact on the likelihood of euthanasia being the outcome, with breeds that are considered more aggressive and violent having higher rates of euthanasia than other breeds.
+
+    3.) As age increases, the likelihood of adoption will decrease and the likelihood of euthanasia will increase.
+
 -   Identify the types of variables in your research question. Categorical? Quantitative?
+
+    Categorical variables: Outcome Type, Outcome Subtype, Animal Type, Sex upon Outcome, Breed, and Color
+
+    Quantitative variable: Age upon Outcome
 
 ## Glimpse of data
 
