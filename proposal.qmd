@@ -59,6 +59,11 @@ library(skimr)
 #| label: load-data-2
 
 # add code here
+animal_center_outcomes <- read_csv("data/Austin_Animal_Center_Outcomes .csv", skip = 1)
+
+animal_center_outcomes
+
+glimpse(animal_center_outcomes)
 ```
 
 # Data 3
