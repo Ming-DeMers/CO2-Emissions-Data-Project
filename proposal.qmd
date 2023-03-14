@@ -43,6 +43,8 @@ library(skimr)
 
 -   Identify the source of the data.
 
+    -   The data's source is from the website data.austintexas.gov. The data is collected from the Austin Animal Center. It was originally created on February 5, 2016.
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
 -   Write a brief description of the observations.
