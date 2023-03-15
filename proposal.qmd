@@ -15,26 +15,44 @@ library(skimr)
 
 # Data 1
 
-## Introduction and data
-
 -   Identify the source of the data.
+
+    The source of the data is the Stanford Open Policing Project, which records and tabulates police stops of cities and counties in the United States.
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
+    The data is collected, by request, from police departments in every state. They started collecting in 2015.
+
 -   Write a brief description of the observations.
+
+    There are numerous observations, including the date of the stop, the biographical information of the stopped, whether a search was conducted, if arrests were made, and reason for stop. Not all data sets contain this information, as different police departments provided varying level of information. We have chosen to select all the findings of just one state, California.
 
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+
+    In California, who is most likely to be stopped by police, what about at night? What is the most prevalent reasoning for stopping per race, by jurisdiction? What is the per capital rate for pulling individuals over? Do certain biographical features lead to more frisks, searches, or arrests?
+
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
+
+    We intend to study if race, gender, age, are correlated with stops, and subsequent searches, frisks, or arrests.
+
+    Out hypothesis is that certain races and ages will experience more stops, and that they will also experience more subsequent actions.
+
 -   Identify the types of variables in your research question. Categorical? Quantitative?
+
+    Stop date and time is quantitative. Reason for stop, search conducted, frisk performed, and arrest made are categorical.
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-1
 
-# add code here
+# example of the san diego dataset
+
+sandiego <- read.csv("data/ca_police_stops/ca_san_diego_2020_04_01.csv")
+
+skim(sandiego)
 ```
 
 # Data 2
