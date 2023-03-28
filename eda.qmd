@@ -41,11 +41,11 @@ glimpse(pollution)
 
 ```
 
-*This data was found at the website:*
+This data was initally found on the CORGIS Datasets Project website. We first narrowed our search by csv files for convenience, then decided upon the global emissions data found on this page:
 
-*https://ourworldindata.org/co2-and-greenhouse-gas-emissions*
+https://corgis-edu.github.io/corgis/csv/global_emissions/
 
-*Then the data was downloaded following the download link on that website, which took*
+From the website we downloaded the file "global_emissions.csv".
 
 The data needed no further tidying/cleaning as it is already in the proper format with one column per variable, one row per observation, and once cell per value.
 
