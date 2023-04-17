@@ -32,7 +32,7 @@
     "href": "pre-registration.html",
     "title": "Project title",
     "section": "",
-    "text": "Analysis #1\nDescribe your first analysis here.\n\n\nAnalysis #2\nDescribe your second analysis here."
+    "text": "Analysis #1\nDescribe your first analysis here.\n\n\nAnalysis #2\nIn this analysis, we aim to investigate the differences in CO2 production between the first year data was available (1992) and the most recent year data was available (2018) for a certain country. In this analysis, we will perform a Null Hypothesis test where Ho = 𝜇1 - 𝜇2 = 0 and HA = 𝜇1 - 𝜇2 ≠ 0 with the significance level being p < 0.05 where 𝜇1 represents the average CO2 emissions for a certain country in 1992 and 𝜇2 represents the average CO2 emissions of a certain country in 2018."
   },
   {
     "objectID": "presentation.html#introduce-the-topic-and-motivation",

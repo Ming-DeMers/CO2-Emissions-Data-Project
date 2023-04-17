@@ -7,11 +7,10 @@ execute:
   echo: true
 ---
 
-# Analysis \#1
+# Analysis #1
 
 Describe your first analysis here.
 
-# Analysis \#2
+# Analysis #2
 
-Describe your second analysis here.
-
+In this analysis, we aim to investigate the differences in CO2 production between the first year data was available (1992) and the most recent year data was available (2018) for a certain country. In this analysis, we will perform a Null Hypothesis test where Ho = 𝜇1 - 𝜇2 = 0 and HA = 𝜇1 - 𝜇2 ≠ 0 with the significance level being p \< 0.05 where 𝜇1 represents the average CO2 emissions for a certain country in 1992 and 𝜇2 represents the average CO2 emissions of a certain country in 2018.
