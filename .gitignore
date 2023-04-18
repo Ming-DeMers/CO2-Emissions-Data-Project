@@ -38,4 +38,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# large files
+data/wb225bk3255_ca_statewide_2023_01_26.csv.zip
+data/yg821jf8611_ny_statewide_2020_04_01.csv.zip
+
 /.quarto/
+git@github.com:Ming-DeMers/CO2-Emissions-Data-Project.git
