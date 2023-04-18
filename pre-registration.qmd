@@ -9,7 +9,7 @@ execute:
 
 # Analysis #1
 
-Describe your first analysis here.
+In this analysis, we intend to explore how global CO2 emissions correlate with the GDP growth rate for developing versus developed countries. Our analysis will use linear regression to model the relationship between GDP growth rate and global CO2 emissions. Examining the latest year, 2018, we will conduct a correlation test between CO2, the explanatory variable, and GDP, the response variable of the country groups. We would report the regression coefficient and R2 value and include visualizations of the relationship between the two variables. Regardless of correlation, we will include the findings in the final report.
 
 # Analysis #2
 
