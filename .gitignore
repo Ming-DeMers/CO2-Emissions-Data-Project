@@ -40,6 +40,15 @@ vignettes/*.pdf
 
 # large files
 data/wb225bk3255_ca_statewide_2023_01_26.csv.zip
+data/wb225bk3255_il_chicago_2023_01_26.csv.zip
+data/yg821jf8611_ca_los_angeles_2020_04_01.csv.zip
+data/yg821jf8611_ca_san_francisco_2020_04_01.csv.zip
+data/yg821jf8611_co_denver_2020_04_01.csv.zip
+data/yg821jf8611_la_new_orleans_2020_04_01.csv.zip
+data/yg821jf8611_nc_charlotte_2020_04_01.csv.zip
 data/yg821jf8611_ny_statewide_2020_04_01.csv.zip
+data/yg821jf8611_wa_seattle_2020_04_01.csv.zip
+data/yg821jf8611_wy_statewide_2020_04_01.csv.zip
+data/ca_san_diego_2020_04_01.csv
 
 /.quarto/
