@@ -122,6 +122,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -358,7 +359,7 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
  8 Austria      306055723842.
  9 Azerbaijan    87440896379.
 10 Bangladesh   324340371911.
-# ℹ 82 more rows</code></pre>
+# … with 82 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#average total CO2 emissions of countries </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pollution <span class="sc">|&gt;</span></span>
@@ -378,7 +379,7 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
  8 Austria       68.8 
  9 Azerbaijan    34.9 
 10 Bangladesh    42.6 
-# ℹ 82 more rows</code></pre>
+# … with 82 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#visualizing change in GDP over time for a developed country</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pollution_usa <span class="ot">&lt;-</span> pollution <span class="sc">|&gt;</span></span>
@@ -570,6 +571,10 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
 2 Emissions.Production.CO2.Total  0.0000820 0.0000430      1.91 5.65e- 2</code></pre>
 </div>
 </div>
+<p><span class="math display">\[
+log(\frac{p}{1-p})=-5.59 \times 10^{-1} + 8.20 \times 10^{-5} \times total~CO2~emissions
+\]</span></p>
+<p>The intercept can be interpreted as the log odds of a country being “developed” if total CO2 emissions is 0, which is $-5.59 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p.&nbsp;The odds, <span class="math inline">\(\frac {p}{1-p}\)</span>, of a country being “developed” if total CO2 emissions is 0 is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}}\)</span> where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}} - e ^ {-5.59 \times 10 ^{-1}} p\)</span> .</p>
 </section>
 <section id="interpretation-and-conclusions" class="level1">
 <h1>Interpretation and conclusions</h1>
