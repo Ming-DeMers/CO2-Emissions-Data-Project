@@ -13,6 +13,8 @@ execute:
 
 library(tidyverse)
 library(skimr)
+library(tidymodels)
+library(openintro)
 ```
 
 ```{r}
@@ -25,7 +27,7 @@ glimpse(pollution)
 
 # Introduction
 
-One cannot think of global climate change and environmental sustainability without thinking of CO2. According to NASA, \"Carbon dioxide in the atmosphere warms the planet, causing climate change. Human activities have raised the atmosphere's carbon dioxide content by 50% in less than 200 years,\" and according to Climate.gov, \" By adding more carbon dioxide to the atmosphere, people are supercharging the natural greenhouse effect, causing global temperature to rise.\" In our analysis, we intend to explore how global CO2 emissions correlate with the GDP growth rate for developing versus developed countries. Additionally, we aim to investigate the differences in CO2 production between the first year data was available (1992) and the most recent year data was available (2018) for a certain country.
+One cannot think of global climate change and environmental sustainability without thinking of CO2. According to NASA, "Carbon dioxide in the atmosphere warms the planet, causing climate change. Human activities have raised the atmosphere's carbon dioxide content by 50% in less than 200 years," and according to Climate.gov, " By adding more carbon dioxide to the atmosphere, people are supercharging the natural greenhouse effect, causing global temperature to rise." In our analysis, we intend to explore how global CO2 emissions correlate with the GDP growth rate for developing versus developed countries. Additionally, we aim to investigate the differences in CO2 production between the first year data was available (1992) and the most recent year data was available (2018) for a certain country.
 
 # Data description
 
@@ -247,6 +249,23 @@ The observations above could indicate a possible correlation between GDP growth 
 The graphs of "Total CO2 Emissions vs. Country GDP in 2018" and "Total CO2 Emissions vs. Country GDP in 1992" demonstrate a potential positive linear relationship between GDP and total CO2 emissions for the different countries across the years of 1992 to 2018.
 
 # Evaluation of significance
+
+```{r}
+#| label: analysis-one
+
+developed_countries <- c(
+  "Austria", "Belgium", "Denmark", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Netherlands", "Portugal", "Spain", "Sweden", "United Kingdom", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Estonia", "Hungary", "Latvia", "Lithuania", "Malta", "Poland", "Romania", "Slovakia", "Slovenia", "Iceland", "Norway", "Switzerland", "Australia", "Canada", "Japan", "New Zealand", "United States"
+  )
+pollution <- pollution |>
+  mutate(developed = if_else(Country.Name %in% developed_countries, "Yes", "No"),
+         developed = factor(developed))
+
+log_fit <- logistic_reg() |>
+  fit(developed ~ Emissions.Production.CO2.Total, data = pollution)
+
+tidy(log_fit)
+
+```
 
 # Interpretation and conclusions
 
