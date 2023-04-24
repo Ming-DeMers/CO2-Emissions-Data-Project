@@ -25,6 +25,8 @@ glimpse(pollution)
 
 # Introduction
 
+One cannot think of global climate change and environmental sustainability without thinking of CO2. According to NASA, \"Carbon dioxide in the atmosphere warms the planet, causing climate change. Human activities have raised the atmosphere's carbon dioxide content by 50% in less than 200 years,\" and according to Climate.gov, \" By adding more carbon dioxide to the atmosphere, people are supercharging the natural greenhouse effect, causing global temperature to rise.\" In our analysis, we intend to explore how global CO2 emissions correlate with the GDP growth rate for developing versus developed countries. Additionally, we aim to investigate the differences in CO2 production between the first year data was available (1992) and the most recent year data was available (2018) for a certain country.
+
 # Data description
 
 ### Motivation
