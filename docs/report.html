@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -122,7 +122,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -223,9 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pollution <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/global_emissions.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -551,30 +548,6 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
 </section>
 <section id="evaluation-of-significance" class="level1">
 <h1>Evaluation of significance</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>developed_countries <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Austria"</span>, <span class="st">"Belgium"</span>, <span class="st">"Denmark"</span>, <span class="st">"Finland"</span>, <span class="st">"France"</span>, <span class="st">"Germany"</span>, <span class="st">"Greece"</span>, <span class="st">"Ireland"</span>, <span class="st">"Italy"</span>, <span class="st">"Luxembourg"</span>, <span class="st">"Netherlands"</span>, <span class="st">"Portugal"</span>, <span class="st">"Spain"</span>, <span class="st">"Sweden"</span>, <span class="st">"United Kingdom"</span>, <span class="st">"Bulgaria"</span>, <span class="st">"Croatia"</span>, <span class="st">"Cyprus"</span>, <span class="st">"Czech Republic"</span>, <span class="st">"Estonia"</span>, <span class="st">"Hungary"</span>, <span class="st">"Latvia"</span>, <span class="st">"Lithuania"</span>, <span class="st">"Malta"</span>, <span class="st">"Poland"</span>, <span class="st">"Romania"</span>, <span class="st">"Slovakia"</span>, <span class="st">"Slovenia"</span>, <span class="st">"Iceland"</span>, <span class="st">"Norway"</span>, <span class="st">"Switzerland"</span>, <span class="st">"Australia"</span>, <span class="st">"Canada"</span>, <span class="st">"Japan"</span>, <span class="st">"New Zealand"</span>, <span class="st">"United States"</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>pollution <span class="ot">&lt;-</span> pollution <span class="sc">|&gt;</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">developed =</span> <span class="fu">if_else</span>(Country.Name <span class="sc">%in%</span> developed_countries, <span class="st">"Yes"</span>, <span class="st">"No"</span>),</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">developed =</span> <span class="fu">factor</span>(developed))</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>log_fit <span class="ot">&lt;-</span> <span class="fu">logistic_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(developed <span class="sc">~</span> Emissions.Production.CO2.Total, <span class="at">data =</span> pollution)</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(log_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 5
-  term                             estimate std.error statistic  p.value
-  &lt;chr&gt;                               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-1 (Intercept)                    -0.559     0.0437       -12.8  1.61e-37
-2 Emissions.Production.CO2.Total  0.0000820 0.0000430      1.91 5.65e- 2</code></pre>
-</div>
-</div>
-<p><span class="math display">\[
-log(\frac{p}{1-p})=-5.59 \times 10^{-1} + 8.20 \times 10^{-5} \times total~CO2~emissions
-\]</span></p>
-<p>The intercept can be interpreted as the log odds of a country being “developed” if total CO2 emissions is 0, which is $-5.59 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p.&nbsp;The odds, <span class="math inline">\(\frac {p}{1-p}\)</span>, of a country being “developed” if total CO2 emissions is 0 is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}}\)</span> where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}} - e ^ {-5.59 \times 10 ^{-1}} p\)</span> .</p>
 </section>
 <section id="interpretation-and-conclusions" class="level1">
 <h1>Interpretation and conclusions</h1>

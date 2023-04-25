@@ -12,9 +12,9 @@ execute:
 #| message: false
 
 library(tidyverse)
-library(skimr)
 library(tidymodels)
-library(openintro)
+library(scales)
+library(skimr)
 ```
 
 ```{r}
@@ -251,27 +251,24 @@ The graphs of "Total CO2 Emissions vs. Country GDP in 2018" and "Total CO2 Emiss
 # Evaluation of significance
 
 ```{r}
-#| label: analysis-one
 
-developed_countries <- c(
-  "Austria", "Belgium", "Denmark", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Netherlands", "Portugal", "Spain", "Sweden", "United Kingdom", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Estonia", "Hungary", "Latvia", "Lithuania", "Malta", "Poland", "Romania", "Slovakia", "Slovenia", "Iceland", "Norway", "Switzerland", "Australia", "Canada", "Japan", "New Zealand", "United States"
-  )
-pollution <- pollution |>
-  mutate(developed = if_else(Country.Name %in% developed_countries, "Yes", "No"),
-         developed = factor(developed))
+# select our four countries
+pollution_nations <-
+  pollution |>
+  group_by(Country.Name) |>
+  filter(Country.Name == c('United States', 'Japan', 'Pakistan', 'Vietnam'))
 
-log_fit <- logistic_reg() |>
-  fit(developed ~ Emissions.Production.CO2.Total, data = pollution)
+# fit a model
+nations_fit <-
+ linear_reg() |>
+  fit((Country.GDP) ~  Emissions.Production.CO2.Total, pollution_nations) 
 
-tidy(log_fit)
+# the model
+tidy(nations_fit)
+
+# determine p-value with 95% confidence
 
 ```
-
-$$
-log(\frac{p}{1-p})=-5.59 \times 10^{-1} + 8.20 \times 10^{-5} \times total~CO2~emissions
-$$
-
-The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is \$-5.59 \\times 10\^{-1}\$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.59 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.59 \times 10 ^ {-1}} - e ^ {-5.59 \times 10 ^{-1}} p$ .
 
 # Interpretation and conclusions
 

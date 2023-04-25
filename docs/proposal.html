@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -628,22 +628,22 @@ chr (12): Animal ID, Name, DateTime, MonthYear, Date of Birth, Outcome Type,...
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>animal_center_outcomes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 149,051 × 12
-   `Animal ID` Name       DateTime      MonthYear `Date of Birth` `Outcome Type`
-   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;           &lt;chr&gt;         
- 1 A794011     Chunk      05/08/2019 0… May 2019  05/02/2017      Rto-Adopt     
- 2 A776359     Gizmo      07/18/2018 0… Jul 2018  07/12/2017      Adoption      
- 3 A821648     &lt;NA&gt;       08/16/2020 1… Aug 2020  08/16/2019      Euthanasia    
- 4 A720371     Moose      02/13/2016 0… Feb 2016  10/08/2015      Adoption      
- 5 A674754     &lt;NA&gt;       03/18/2014 1… Mar 2014  03/12/2014      Transfer      
- 6 A659412     Princess   10/05/2020 0… Oct 2020  03/24/2013      Adoption      
- 7 A814515     Quentin    05/06/2020 0… May 2020  03/01/2018      Adoption      
- 8 A868405     *Leo       03/04/2023 0… Mar 2023  11/02/2020      Adoption      
- 9 A689724     *Donatello 10/18/2014 0… Oct 2014  08/01/2014      Adoption      
-10 A680969     *Zeus      08/05/2014 0… Aug 2014  06/03/2014      Adoption      
-# ℹ 149,041 more rows
-# ℹ 6 more variables: `Outcome Subtype` &lt;chr&gt;, `Animal Type` &lt;chr&gt;,
-#   `Sex upon Outcome` &lt;chr&gt;, `Age upon Outcome` &lt;chr&gt;, Breed &lt;chr&gt;,
-#   Color &lt;chr&gt;</code></pre>
+   Anima…¹ Name  DateT…² Month…³ Date …⁴ Outco…⁵ Outco…⁶ Anima…⁷ Sex u…⁸ Age u…⁹
+   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+ 1 A794011 Chunk 05/08/… May 20… 05/02/… Rto-Ad… &lt;NA&gt;    Cat     Neuter… 2 years
+ 2 A776359 Gizmo 07/18/… Jul 20… 07/12/… Adopti… &lt;NA&gt;    Dog     Neuter… 1 year 
+ 3 A821648 &lt;NA&gt;  08/16/… Aug 20… 08/16/… Euthan… &lt;NA&gt;    Other   Unknown 1 year 
+ 4 A720371 Moose 02/13/… Feb 20… 10/08/… Adopti… &lt;NA&gt;    Dog     Neuter… 4 mont…
+ 5 A674754 &lt;NA&gt;  03/18/… Mar 20… 03/12/… Transf… Partner Cat     Intact… 6 days 
+ 6 A659412 Prin… 10/05/… Oct 20… 03/24/… Adopti… &lt;NA&gt;    Dog     Spayed… 7 years
+ 7 A814515 Quen… 05/06/… May 20… 03/01/… Adopti… Foster  Dog     Neuter… 2 years
+ 8 A868405 *Leo  03/04/… Mar 20… 11/02/… Adopti… &lt;NA&gt;    Dog     Neuter… 2 years
+ 9 A689724 *Don… 10/18/… Oct 20… 08/01/… Adopti… &lt;NA&gt;    Cat     Neuter… 2 mont…
+10 A680969 *Zeus 08/05/… Aug 20… 06/03/… Adopti… &lt;NA&gt;    Cat     Neuter… 2 mont…
+# … with 149,041 more rows, 2 more variables: Breed &lt;chr&gt;, Color &lt;chr&gt;, and
+#   abbreviated variable names ¹​`Animal ID`, ²​DateTime, ³​MonthYear,
+#   ⁴​`Date of Birth`, ⁵​`Outcome Type`, ⁶​`Outcome Subtype`, ⁷​`Animal Type`,
+#   ⁸​`Sex upon Outcome`, ⁹​`Age upon Outcome`</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(animal_center_outcomes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
