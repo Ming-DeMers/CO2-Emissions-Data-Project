@@ -250,25 +250,63 @@ The graphs of "Total CO2 Emissions vs. Country GDP in 2018" and "Total CO2 Emiss
 
 # Evaluation of significance
 
+## Research Question One
+
 ```{r}
+developed_countries <- c(
+  "Austria", "Belgium", "Denmark", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Netherlands", "Portugal", "Spain", "Sweden", "United Kingdom", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Estonia", "Hungary", "Latvia", "Lithuania", "Malta", "Poland", "Romania", "Slovakia", "Slovenia", "Iceland", "Norway", "Switzerland", "Australia", "Canada", "Japan", "New Zealand", "United States"
+  )
+pollution <- pollution |>
+  mutate(developed = if_else(Country.Name %in% developed_countries, "Yes", "No"),
+         developed = factor(developed))
+log_fit <- logistic_reg() |>
+  fit(developed ~ Emissions.Production.CO2.Total, data = pollution)
 
-# select our four countries
-pollution_nations <-
-  pollution |>
-  group_by(Country.Name) |>
-  filter(Country.Name == c('United States', 'Japan', 'Pakistan', 'Vietnam'))
-
-# fit a model
-nations_fit <-
- linear_reg() |>
-  fit((Country.GDP) ~  Emissions.Production.CO2.Total, pollution_nations) 
-
-# the model
-tidy(nations_fit)
-
-# determine p-value with 95% confidence
+tidy(log_fit)
 
 ```
+
+$$
+log(\frac{p}{1-p})=-5.59 \times 10^{-1} + 8.20 \times 10^{-5} \times total~CO2~emissions
+$$
+
+The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is \$-5.59 \\times 10\^{-1}\$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.59 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.59 \times 10 ^ {-1}} - e ^ {-5.59 \times 10 ^{-1}} p$ .
+
+## Research Question Two
+
+```{r}
+#| label: analysis-two
+
+set.seed(123)
+
+us_2000 <- as.integer(pollution[pollution$Country.Name == "United States" & pollution$Year == 2000, "Emissions.Production.CO2.Total"])
+
+
+pollution_mod <- pollution |>
+  mutate(
+    us_compare = if_else(Emissions.Production.CO2.Total > us_2000, "more" , "less"), 
+    us_compare = as.factor(us_compare),
+    y2k = if_else(Year >= 2000, "twentyfirst", "twentieth"),
+    y2k = as.factor(y2k)
+  ) 
+
+point_estimate <- pollution_mod |>
+  specify(us_compare ~ y2k, success = "more") |>
+  calculate(stat = "diff in props", order = c("twentieth", "twentyfirst"))
+
+null_dist <- pollution_mod |>
+  specify(us_compare ~ y2k, success = "more") |>
+  hypothesize(null = "independence") |>
+  generate(1000, type = "permute") |>
+  calculate(stat = "diff in props", order = c("twentieth", "twentyfirst"))
+
+visualize(null_dist) +
+ shade_p_value(obs_stat = point_estimate, direction = "two sided")
+
+null_dist |>
+  get_p_value(obs_stat = point_estimate, direction = "two sided")
+```
+
 
 # Interpretation and conclusions
 
