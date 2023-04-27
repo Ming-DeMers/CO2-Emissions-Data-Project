@@ -307,8 +307,13 @@ null_dist |>
   get_p_value(obs_stat = point_estimate, direction = "two sided")
 ```
 
-
 # Interpretation and conclusions
+
+We find that there is indeed an increase in CO2 emissions, and that this increase is correlated to GDP of a country. Our data indicates a dramatic increase in CO2 emissions; for developed countries, a exponential increase, and for developed countries, a linear increase. Regardless, according to the Intergovernmental Panel on Climate Change (IPCC), the United Nations Environment Program (UNEP), and the United States Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth's atmosphere and the subsequent climate change.
+
+In developing nations, we tend to see industrialization, means more burning of fossil fuels and deforestation, thus increasing CO2 emissions. Thus, we see dramatic increased in emission of these countries.
+
+Reducing emissions is important to mitigate the impacts of climate change and limit the global temperature increase to within safe levels. This requires transitioning to renewable energy sources, increasing energy efficiency, reducing deforestation and promoting reforestation, and adopting sustainable land use practices, among other measures.
 
 # Limitations
 
