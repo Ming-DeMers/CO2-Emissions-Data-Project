@@ -274,8 +274,7 @@ The intercept can be interpreted as the log odds of a country being "developed" 
 
 $$
 H_0 : \mu_a - \mu_b = 0
-$$
-$$
+$$ $$
 H_A: \mu_a - \mu_b \neq 0
 $$
 

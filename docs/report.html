@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -363,7 +363,7 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
  8 Austria      306055723842.
  9 Azerbaijan    87440896379.
 10 Bangladesh   324340371911.
-# … with 82 more rows</code></pre>
+# ℹ 82 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#average total CO2 emissions of countries </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pollution <span class="sc">|&gt;</span></span>
@@ -383,7 +383,7 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
  8 Austria       68.8 
  9 Azerbaijan    34.9 
 10 Bangladesh    42.6 
-# … with 82 more rows</code></pre>
+# ℹ 82 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#visualizing change in GDP over time for a developed country</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pollution_usa <span class="ot">&lt;-</span> pollution <span class="sc">|&gt;</span></span>
@@ -580,6 +580,11 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
 log(\frac{p}{1-p})=-5.59 \times 10^{-1} + 8.20 \times 10^{-5} \times total~CO2~emissions
 \]</span></p>
 <p>The intercept can be interpreted as the log odds of a country being “developed” if total CO2 emissions is 0, which is $-5.59 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p.&nbsp;The odds, <span class="math inline">\(\frac {p}{1-p}\)</span>, of a country being “developed” if total CO2 emissions is 0 is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}}\)</span> where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}} - e ^ {-5.59 \times 10 ^{-1}} p\)</span> .</p>
+<p><span class="math display">\[
+H_0 : \mu_a - \mu_b = 0
+\]</span> <span class="math display">\[
+H_A: \mu_a - \mu_b \neq 0
+\]</span></p>
 </section>
 <section id="research-question-two" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-two">Research Question Two</h2>
@@ -616,8 +621,8 @@ log(\frac{p}{1-p})=-5.59 \times 10^{-1} + 8.20 \times 10^{-5} \times total~CO2~e
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> point_estimate, <span class="at">direction =</span> <span class="st">"two sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an
-approximation based on the number of `reps` chosen in the `generate()` step.
-See `?get_p_value()` for more information.</code></pre>
+approximation based on the number of `reps` chosen in the `generate()` step. See
+`?get_p_value()` for more information.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
