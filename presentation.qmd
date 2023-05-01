@@ -35,10 +35,121 @@ execute:
 
 ## Highlights from EDA
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+```{r}
+#| label: load-pkgs
+#| message: false
+
+library(tidyverse)
+library(skimr)
+library(rcis)
+```
 
 ```{r}
-1 + 1
+#| label: read-csv-glimpse
+
+pollution <- read_csv("data/global_emissions.csv")
+```
+
+```{r}
+#| label: gdp-developed
+#visualizing change in GDP over time for a developed country
+pollution_usa <- pollution |>
+  filter(Country.Name == "United States")
+
+ggplot(data = pollution_usa, mapping = aes(x = Year, y = Country.GDP)) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "GDP Change Over Time in USA", 
+    x = "Year",
+    y = "GDP (international$)"
+  )
+```
+
+```{r}
+#| label: gdp-developing
+#visualizing change in GDP over time for a developing country
+pollution_pakistan <- pollution |>
+  filter(Country.Name == "Pakistan")
+
+ggplot(data = pollution_pakistan, mapping = aes(x = Year, y = Country.GDP)) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "GDP Change Over Time in Pakistan", 
+    x = "Year",
+    y = "GDP (international$)"
+  ) 
+```
+
+```{r}
+#| label: CO2-developed
+#visualizing change in CO2 emissions over time for a developed country
+ggplot(data = pollution_usa, 
+       mapping = aes(x = Year, y = Emissions.Production.CO2.Total)
+       ) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "CO2 Emissions Change Over Time in USA", 
+    x = "Year",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
+```
+
+```{r}
+#| label: CO2-developing
+#visualizing change in CO2 emissions over time for a developing country
+ggplot(data = pollution_pakistan, 
+       mapping = aes(x = Year, y = Emissions.Production.CO2.Total)
+       ) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "CO2 Emissions Change Over Time in Pakistan", 
+    x = "Year",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
+```
+
+```{r}
+#| label: gdp-CO2-1992
+#visualizing relationship between GDP and total CO2 emissions in 1992
+pollution_92 <- pollution |>
+  filter(Year == 1992)
+
+ggplot(data = pollution_92,
+       mapping = aes(x = Country.GDP, y = Emissions.Production.CO2.Total)
+       ) + 
+  geom_point(alpha = 0.5) + 
+  xlim(0, 3e+12) + 
+  ylim(0, 2000) + 
+  theme_minimal() + 
+  labs(
+    title = "Total CO2 Emissions vs. Country GDP in 1992", 
+    x = "GDP (international$)",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
+```
+
+```{r}
+#| label: gdp-CO2-2018
+#visualizing relationship between GDP and total CO2 emissions in 2018
+pollution_18 <- pollution |>
+  filter(Year == 2018)
+
+ggplot(data = pollution_18,
+       mapping = aes(x = Country.GDP, y = Emissions.Production.CO2.Total)
+       ) + 
+  geom_point(alpha = 0.5) + 
+  xlim(0, 4e+12) + 
+  ylim(0, 2000) + 
+  theme_minimal() + 
+  labs(
+    title = "Total CO2 Emissions vs. Country GDP in 2018", 
+    x = "GDP (international$)",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
 ```
 
 ## Inference/modeling/other analysis
