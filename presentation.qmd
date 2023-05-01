@@ -50,6 +50,8 @@ library(rcis)
 pollution <- read_csv("data/global_emissions.csv")
 ```
 
+::: columns
+::: {.column width="33%"}
 ```{r}
 #| label: gdp-developed
 #visualizing change in GDP over time for a developed country
@@ -65,7 +67,9 @@ ggplot(data = pollution_usa, mapping = aes(x = Year, y = Country.GDP)) +
     y = "GDP (international$)"
   )
 ```
+:::
 
+::: {.column width="33%"}
 ```{r}
 #| label: gdp-developing
 #visualizing change in GDP over time for a developing country
@@ -81,7 +85,9 @@ ggplot(data = pollution_pakistan, mapping = aes(x = Year, y = Country.GDP)) +
     y = "GDP (international$)"
   ) 
 ```
+:::
 
+::: {.column width="33%"}
 ```{r}
 #| label: CO2-developed
 #visualizing change in CO2 emissions over time for a developed country
@@ -96,7 +102,11 @@ ggplot(data = pollution_usa,
     y = "Total CO2 Emissions (kilotons)"
   ) 
 ```
+:::
+:::
 
+::: columns
+::: {.column width="33%"}
 ```{r}
 #| label: CO2-developing
 #visualizing change in CO2 emissions over time for a developing country
@@ -111,7 +121,9 @@ ggplot(data = pollution_pakistan,
     y = "Total CO2 Emissions (kilotons)"
   ) 
 ```
+:::
 
+::: {.column width="33%"}
 ```{r}
 #| label: gdp-CO2-1992
 #visualizing relationship between GDP and total CO2 emissions in 1992
@@ -131,7 +143,9 @@ ggplot(data = pollution_92,
     y = "Total CO2 Emissions (kilotons)"
   ) 
 ```
+:::
 
+::: {.column width="33%"}
 ```{r}
 #| label: gdp-CO2-2018
 #visualizing relationship between GDP and total CO2 emissions in 2018
@@ -151,6 +165,8 @@ ggplot(data = pollution_18,
     y = "Total CO2 Emissions (kilotons)"
   ) 
 ```
+:::
+:::
 
 ## Inference/modeling/other analysis
 
