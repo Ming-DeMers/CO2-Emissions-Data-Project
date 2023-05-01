@@ -1,8 +1,8 @@
 ---
-title: Presentation title
-subtitle: Presentation subtitle (if any)
-author: Team name <br> Names of team members
-date: Your date
+title: It's Getting Hot in Here
+subtitle: Analysis of Global CO2 Emissions Over Time
+author: Impressive Squirtle <br> Cassidy Cheesman, Joanne Wang, Ming DeMers, Elisabeth Pan, and Ivan Lin
+date: 5/5/23
 format: revealjs
 editor: visual
 execute:
@@ -11,21 +11,145 @@ execute:
 
 ## Introduce the topic and motivation
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+-   Climate change is the biggest challenge facing our generation, with increased global CO2 emissions being one of the leading contributors to this issue.
+
+-   In order to combat the effects of climate change, we must first understand the data behind it.
+
+-   Research questions:
+
+    -   What is the relationship between GDP and CO2 emissions for developing versus developed countries in 2018?
+
+    -   Is the true proportion of countries with a CO2 emission greater than the US in the twentieth century different from those in the twenty-first century?
 
 ## Introduce the data
 
-When you click the **Render** button a document will be generated that includes:
+-   Created to show how emissions are changing in each country
 
--   Content authored with markdown
--   Output from executable code
+-   The Our World in Data team created the original dataset on behalf of the Our World in Data project
+
+-   The instances that comprise the dataset represent countries (per year from 1992 to 2018) with 2484 instances total.
+
+-   The observations (rows) are countries per year and the attributes (columns) are various emission data for each country per year
+
+-   The current dataset we will use is a subset of the original dataset, with all the tonnes units converted into kilotons and the variable names altered
 
 ## Highlights from EDA
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+```{r}
+#| label: load-pkgs
+#| message: false
+
+library(tidyverse)
+library(skimr)
+library(rcis)
+```
 
 ```{r}
-1 + 1
+#| label: read-csv-glimpse
+
+pollution <- read_csv("data/global_emissions.csv")
+```
+
+```{r}
+#| label: gdp-developed
+#visualizing change in GDP over time for a developed country
+pollution_usa <- pollution |>
+  filter(Country.Name == "United States")
+
+ggplot(data = pollution_usa, mapping = aes(x = Year, y = Country.GDP)) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "GDP Change Over Time in USA", 
+    x = "Year",
+    y = "GDP (international$)"
+  )
+```
+
+```{r}
+#| label: gdp-developing
+#visualizing change in GDP over time for a developing country
+pollution_pakistan <- pollution |>
+  filter(Country.Name == "Pakistan")
+
+ggplot(data = pollution_pakistan, mapping = aes(x = Year, y = Country.GDP)) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "GDP Change Over Time in Pakistan", 
+    x = "Year",
+    y = "GDP (international$)"
+  ) 
+```
+
+```{r}
+#| label: CO2-developed
+#visualizing change in CO2 emissions over time for a developed country
+ggplot(data = pollution_usa, 
+       mapping = aes(x = Year, y = Emissions.Production.CO2.Total)
+       ) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "CO2 Emissions Change Over Time in USA", 
+    x = "Year",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
+```
+
+```{r}
+#| label: CO2-developing
+#visualizing change in CO2 emissions over time for a developing country
+ggplot(data = pollution_pakistan, 
+       mapping = aes(x = Year, y = Emissions.Production.CO2.Total)
+       ) +
+  geom_col() + 
+  theme_minimal() +
+  labs(
+    title = "CO2 Emissions Change Over Time in Pakistan", 
+    x = "Year",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
+```
+
+```{r}
+#| label: gdp-CO2-1992
+#visualizing relationship between GDP and total CO2 emissions in 1992
+pollution_92 <- pollution |>
+  filter(Year == 1992)
+
+ggplot(data = pollution_92,
+       mapping = aes(x = Country.GDP, y = Emissions.Production.CO2.Total)
+       ) + 
+  geom_point(alpha = 0.5) + 
+  xlim(0, 3e+12) + 
+  ylim(0, 2000) + 
+  theme_minimal() + 
+  labs(
+    title = "Total CO2 Emissions vs. Country GDP in 1992", 
+    x = "GDP (international$)",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
+```
+
+```{r}
+#| label: gdp-CO2-2018
+#visualizing relationship between GDP and total CO2 emissions in 2018
+pollution_18 <- pollution |>
+  filter(Year == 2018)
+
+ggplot(data = pollution_18,
+       mapping = aes(x = Country.GDP, y = Emissions.Production.CO2.Total)
+       ) + 
+  geom_point(alpha = 0.5) + 
+  xlim(0, 4e+12) + 
+  ylim(0, 2000) + 
+  theme_minimal() + 
+  labs(
+    title = "Total CO2 Emissions vs. Country GDP in 2018", 
+    x = "GDP (international$)",
+    y = "Total CO2 Emissions (kilotons)"
+  ) 
 ```
 
 ## Inference/modeling/other analysis
