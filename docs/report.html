@@ -564,16 +564,20 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>pollution <span class="ot">&lt;-</span> pollution <span class="sc">|&gt;</span></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">developed =</span> <span class="fu">if_else</span>(Country.Name <span class="sc">%in%</span> developed_countries, <span class="st">"Yes"</span>, <span class="st">"No"</span>),</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">developed =</span> <span class="fu">factor</span>(developed))</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>log_fit <span class="ot">&lt;-</span> <span class="fu">logistic_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(developed <span class="sc">~</span> Emissions.Production.CO2.Total, <span class="at">data =</span> pollution)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(log_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>pollution_18 <span class="ot">&lt;-</span> pollution <span class="sc">|&gt;</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> <span class="dv">2018</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>log_fit <span class="ot">&lt;-</span> <span class="fu">logistic_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(developed <span class="sc">~</span> Emissions.Production.CO2.Total, <span class="at">data =</span> pollution_18)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(log_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
-  term                             estimate std.error statistic  p.value
-  &lt;chr&gt;                               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-1 (Intercept)                    -0.559     0.0437       -12.8  1.61e-37
-2 Emissions.Production.CO2.Total  0.0000820 0.0000430      1.91 5.65e- 2</code></pre>
+  term                             estimate std.error statistic p.value
+  &lt;chr&gt;                               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)                    -0.514      0.226       -2.27   0.0230
+2 Emissions.Production.CO2.Total -0.0000569  0.000192    -0.296  0.767 </code></pre>
 </div>
 </div>
 <p><span class="math display">\[
@@ -635,7 +639,7 @@ approximation based on the number of `reps` chosen in the `generate()` step. See
 </section>
 <section id="interpretation-and-conclusions" class="level1">
 <h1>Interpretation and conclusions</h1>
-<p>We find that there is indeed an increase in CO2 emissions, and that this increase is correlated to GDP of a country. Our data indicates a dramatic increase in CO2 emissions; for developed countries, a exponential increase, and for developed countries, a linear increase. Regardless, according to the Intergovernmental Panel on Climate Change (IPCC), the United Nations Environment Program (UNEP), and the United States Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth’s atmosphere and the subsequent climate change.</p>
+<p>We find that there is indeed an increase in CO2 emissions, and that this increase is correlated to GDP of a country. Our data indicates a dramatic increase in CO2 emissions; for developing countries, a exponential increase, and for developed countries, a linear increase. Regardless, according to the Intergovernmental Panel on Climate Change (IPCC), the United Nations Environment Program (UNEP), and the United States Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth’s atmosphere and the subsequent climate change.</p>
 <p>In developing nations, we tend to see industrialization, means more burning of fossil fuels and deforestation, thus increasing CO2 emissions. Thus, we see dramatic increased in emission of these countries.</p>
 <p>Reducing emissions is important to mitigate the impacts of climate change and limit the global temperature increase to within safe levels. This requires transitioning to renewable energy sources, increasing energy efficiency, reducing deforestation and promoting reforestation, and adopting sustainable land use practices, among other measures.</p>
 </section>

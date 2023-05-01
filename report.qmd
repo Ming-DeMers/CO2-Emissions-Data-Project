@@ -259,8 +259,12 @@ developed_countries <- c(
 pollution <- pollution |>
   mutate(developed = if_else(Country.Name %in% developed_countries, "Yes", "No"),
          developed = factor(developed))
+
+pollution_18 <- pollution |>
+  filter(Year == 2018)
+
 log_fit <- logistic_reg() |>
-  fit(developed ~ Emissions.Production.CO2.Total, data = pollution)
+  fit(developed ~ Emissions.Production.CO2.Total, data = pollution_18)
 
 tidy(log_fit)
 
@@ -315,7 +319,7 @@ null_dist |>
 
 # Interpretation and conclusions
 
-We find that there is indeed an increase in CO2 emissions, and that this increase is correlated to GDP of a country. Our data indicates a dramatic increase in CO2 emissions; for developed countries, a exponential increase, and for developed countries, a linear increase. Regardless, according to the Intergovernmental Panel on Climate Change (IPCC), the United Nations Environment Program (UNEP), and the United States Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth's atmosphere and the subsequent climate change.
+We find that there is indeed an increase in CO2 emissions, and that this increase is correlated to GDP of a country. Our data indicates a dramatic increase in CO2 emissions; for developing countries, a exponential increase, and for developed countries, a linear increase. Regardless, according to the Intergovernmental Panel on Climate Change (IPCC), the United Nations Environment Program (UNEP), and the United States Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth's atmosphere and the subsequent climate change.
 
 In developing nations, we tend to see industrialization, means more burning of fossil fuels and deforestation, thus increasing CO2 emissions. Thus, we see dramatic increased in emission of these countries.
 
