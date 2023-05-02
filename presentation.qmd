@@ -40,6 +40,7 @@ execute:
 #| message: false
 
 library(tidyverse)
+library(tidymodels)
 library(skimr)
 library(rcis)
 ```
@@ -163,14 +164,35 @@ ggplot(data = pollution_18,
     title = "Total CO2 Emissions vs. Country GDP in 2018", 
     x = "GDP (international$)",
     y = "Total CO2 Emissions (kilotons)"
-  ) 
+  )
 ```
 :::
 :::
 
 ## Inference/modeling/other analysis
 
-Your results here
+```{r}
+developed_countries <- c(
+  "Austria", "Belgium", "Denmark", "Finland", "France", "Germany", "Greece", "Ireland", "Italy", "Luxembourg", "Netherlands", "Portugal", "Spain", "Sweden", "United Kingdom", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Estonia", "Hungary", "Latvia", "Lithuania", "Malta", "Poland", "Romania", "Slovakia", "Slovenia", "Iceland", "Norway", "Switzerland", "Australia", "Canada", "Japan", "New Zealand", "United States"
+  )
+
+pollution_18 <- pollution_18 |>
+  mutate(developed = if_else(Country.Name %in% developed_countries, "Yes", "No"),
+         developed = factor(developed))
+
+log_fit <- logistic_reg() |>
+  fit(developed ~ Emissions.Production.CO2.Total, data = pollution_18)
+
+tidy(log_fit)
+
+```
+$$ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) $$
+The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is $-5.14 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.14 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p$.
+
+$$ H_0 : \mu_a - \mu_b = 0 $$
+
+$$ H_A: \mu_a - \mu_b \neq 0 $$
+
 
 ## Inference/modeling/other analysis
 
