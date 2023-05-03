@@ -186,16 +186,43 @@ log_fit <- logistic_reg() |>
 tidy(log_fit)
 
 ```
-$$ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) $$
-The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is $-5.14 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.14 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p$.
 
-$$ H_0 : \mu_a - \mu_b = 0 $$
-
-$$ H_A: \mu_a - \mu_b \neq 0 $$
+$$ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) $$ The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is $-5.14 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.14 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p$.
 
 
-## Inference/modeling/other analysis
+## Inference/modeling/other analysis {.smaller}
 
-Your results here
+Research Question: Is the true proportion of countries with a CO2 emission greater than the US in the twentieth century different from those in the twenty-first century? 
+
+```{r}
+set.seed(123)
+
+us_2000 <- as.integer(pollution[pollution$Country.Name == "United States" & pollution$Year == 2000, "Emissions.Production.CO2.Total"])
+
+
+pollution_mod <- pollution |>
+  mutate(
+    us_compare = if_else(Emissions.Production.CO2.Total > us_2000, "more" , "less"), 
+    us_compare = as.factor(us_compare),
+    y2k = if_else(Year >= 2000, "twentyfirst", "twentieth"),
+    y2k = as.factor(y2k)
+  ) 
+
+point_estimate <- pollution_mod |>
+  specify(us_compare ~ y2k, success = "more") |>
+  calculate(stat = "diff in props", order = c("twentieth", "twentyfirst"))
+
+null_dist <- pollution_mod |>
+  specify(us_compare ~ y2k, success = "more") |>
+  hypothesize(null = "independence") |>
+  generate(1000, type = "permute") |>
+  calculate(stat = "diff in props", order = c("twentieth", "twentyfirst"))
+
+visualize(null_dist) +
+ shade_p_value(obs_stat = point_estimate, direction = "two sided")
+
+```
+
+
 
 ## Conclusions + future work

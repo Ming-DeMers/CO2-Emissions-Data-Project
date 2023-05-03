@@ -276,13 +276,16 @@ $$
 
 The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is \$-5.59 \\times 10\^{-1}\$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.59 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.59 \times 10 ^ {-1}} - e ^ {-5.59 \times 10 ^{-1}} p$ .
 
+## Research Question Two
+
+The second research question we will attempt to answer is if the true proportion of countries with a CO2 emission greater than the US in the twentieth century different from those in the twenty-first century. We will do this using a null hypothesis test. The null hypothesis is that there is no difference between the centuries, and the alternative hypothesis is the opposite: that there is a difference. In proper notation: 
+
 $$
 H_0 : \mu_a - \mu_b = 0
 $$ $$
 H_A: \mu_a - \mu_b \neq 0
 $$
-
-## Research Question Two
+To answer this question, we preformed the following code:
 
 ```{r}
 #| label: analysis-two
@@ -316,6 +319,7 @@ visualize(null_dist) +
 null_dist |>
   get_p_value(obs_stat = point_estimate, direction = "two sided")
 ```
+In our analysis, we obtain a p-value of 0. The value points to the data being very unlikely to exist within the null hypothesis, or in other words, that we have strong evidence to reject the null hypothesis and accept the alternative hypothesis. 
 
 # Interpretation and conclusions
 

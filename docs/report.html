@@ -584,14 +584,15 @@ $ `Emissions.Global Share.CO2.Total`   &lt;dbl&gt; 0.01, 0.01, 0.01, 0.01, 0.00,
 log(\frac{p}{1-p})=-5.59 \times 10^{-1} + 8.20 \times 10^{-5} \times total~CO2~emissions
 \]</span></p>
 <p>The intercept can be interpreted as the log odds of a country being “developed” if total CO2 emissions is 0, which is $-5.59 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p.&nbsp;The odds, <span class="math inline">\(\frac {p}{1-p}\)</span>, of a country being “developed” if total CO2 emissions is 0 is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}}\)</span> where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is <span class="math inline">\(e ^ {-5.59 \times 10 ^ {-1}} - e ^ {-5.59 \times 10 ^{-1}} p\)</span> .</p>
+</section>
+<section id="research-question-two" class="level2">
+<h2 class="anchored" data-anchor-id="research-question-two">Research Question Two</h2>
+<p>The second research question we will attempt to answer is if the true proportion of countries with a CO2 emission greater than the US in the twentieth century different from those in the twenty-first century. We will do this using a null hypothesis test. The null hypothesis is that there is no difference between the centuries, and the alternative hypothesis is the opposite: that there is a difference. In proper notation:</p>
 <p><span class="math display">\[
 H_0 : \mu_a - \mu_b = 0
 \]</span> <span class="math display">\[
 H_A: \mu_a - \mu_b \neq 0
-\]</span></p>
-</section>
-<section id="research-question-two" class="level2">
-<h2 class="anchored" data-anchor-id="research-question-two">Research Question Two</h2>
+\]</span> To answer this question, we preformed the following code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -635,6 +636,7 @@ approximation based on the number of `reps` chosen in the `generate()` step. See
 1       0</code></pre>
 </div>
 </div>
+<p>In our analysis, we obtain a p-value of 0. The value points to the data being very unlikely to exist within the null hypothesis, or in other words, that we have strong evidence to reject the null hypothesis and accept the alternative hypothesis.</p>
 </section>
 </section>
 <section id="interpretation-and-conclusions" class="level1">
