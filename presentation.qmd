@@ -1,5 +1,5 @@
 ---
-title: It's Getting Hot in Here
+title: It's Getting *Hot* in Here
 subtitle: Analysis of Global CO2 Emissions Over Time
 author: Impressive Squirtle <br> Cassidy Cheesman, Joanne Wang, Ming DeMers, Elisabeth Pan, and Ivan Lin
 date: 5/5/23
@@ -9,7 +9,7 @@ execute:
   echo: false
 ---
 
-## Introduce the topic and motivation
+## Topic and Motivation
 
 -   Climate change is the biggest challenge facing our generation, with increased global CO2 emissions being one of the leading contributors to this issue.
 
@@ -21,7 +21,7 @@ execute:
 
     -   Is the true proportion of countries with a CO2 emission greater than the US in the twentieth century different from those in the twenty-first century?
 
-## Introduce the data
+## The Data
 
 -   Created to show how emissions are changing in each country
 
@@ -33,7 +33,7 @@ execute:
 
 -   The current dataset we will use is a subset of the original dataset, with all the tonnes units converted into kilotons and the variable names altered
 
-## Highlights from EDA
+## Highlights from the EDA
 
 ```{r}
 #| label: load-pkgs
@@ -169,7 +169,7 @@ ggplot(data = pollution_18,
 :::
 :::
 
-## Inference/modeling/other analysis
+## Inference, Modeling, and Analysis
 
 ```{r}
 developed_countries <- c(
@@ -189,7 +189,20 @@ tidy(log_fit)
 
 $$ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) $$ The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is $-5.14 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.14 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p$.
 
+##  {background-video="recorded-slide.mp4"}
 
-## {background-video="recorded-slide.mp4"}
+## Conclusions and Future Work
 
-## Conclusions + future work
+We find that there is indeed an increase in CO2 emissions between the two centuries
+
+For developing countries, a near-exponential increase
+
+For dveloped countries, a linear increase.
+
+This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair.
+
+Not all 195 countries, nor only 1992 - 2018.
+
+In the future, we hope to explore a larger time frame, and examine more features than just gdp, such as population, industrialization, number of cities, etc.
+
+Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
