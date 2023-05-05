@@ -173,7 +173,7 @@ ggplot(data = pollution_18,
 
 ## Inference, Modeling, and Analysis {.smaller}
 
-Research question: What is the relationship between GDP and CO2 emissions for developing versus developed countries in 2018?
+Research question: What is the association between GDP and CO2 emissions for developing versus developed countries in 2018?
 
 ```{r}
 developed_countries <- c(
@@ -191,7 +191,7 @@ tidy(log_fit)
 
 ```
 
-$$ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) $$ The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is $-5.14 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.14 \times 10 ^ {-1}}$ where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p$.
+$$ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) $$ The intercept can be interpreted as the log odds of a country being "developed" if total CO2 emissions is 0, which is $-5.14 \times 10^{-1}$. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p. The odds, $\frac {p}{1-p}$, of a country being "developed" if total CO2 emissions is 0 is $e ^ {-5.14 \times 10 ^ {-1}}$ which is 0.598, where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is $e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p$ or 0.37.
 
 ##  {background-video="recorded-slide.mp4"}
 
