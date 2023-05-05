@@ -3,7 +3,9 @@ title: It's Getting *Hot* in Here
 subtitle: Analysis of Global CO2 Emissions Over Time
 author: Impressive Squirtle <br> Cassidy Cheesman, Joanne Wang, Ming DeMers, Elisabeth Pan, and Ivan Lin
 date: 5/5/23
-format: revealjs
+format: 
+  revealjs:
+    smaller: true
 editor: visual
 execute:
   echo: false
@@ -169,7 +171,9 @@ ggplot(data = pollution_18,
 :::
 :::
 
-## Inference, Modeling, and Analysis
+## Inference, Modeling, and Analysis {.smaller}
+
+Research question: What is the relationship between GDP and CO2 emissions for developing versus developed countries in 2018?
 
 ```{r}
 developed_countries <- c(
@@ -197,12 +201,12 @@ We find that there is indeed an increase in CO2 emissions between the two centur
 
 For developing countries, a near-exponential increase
 
-For dveloped countries, a linear increase.
+For developed countries, a linear increase.
 
 This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair.
 
 Not all 195 countries, nor only 1992 - 2018.
 
-In the future, we hope to explore a larger time frame, and examine more features than just gdp, such as population, industrialization, number of cities, etc.
+In the future, we hope to explore a larger time frame, and examine more features than just GDP, such as population, industrialization, number of cities, etc.
 
 Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
