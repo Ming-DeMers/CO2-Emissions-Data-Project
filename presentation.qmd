@@ -197,16 +197,16 @@ $$ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~
 
 ## Conclusions and Future Work
 
-We find that there is indeed an increase in CO2 emissions between the two centuries
+-   We find that there is indeed an increase in CO2 emissions between the two centuries
 
-For developing countries, a near-exponential increase
+-   For developing countries, a near-exponential increase
 
-For developed countries, a linear increase.
+-   For developed countries, a linear increase.
 
-This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair.
+-   This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair.
 
-Not all 195 countries, nor only 1992 - 2018.
+-   Not all 195 countries, nor only 1992 - 2018.
 
-In the future, we hope to explore a larger time frame, and examine more features than just GDP, such as population, industrialization, number of cities, etc.
+-   In the future, we hope to explore a larger time frame, and examine more features than just GDP, such as population, industrialization, number of cities, etc.
 
-Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
+-   Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
