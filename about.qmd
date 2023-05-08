@@ -8,6 +8,6 @@ This project was developed by **\[Toto\]** For [INFO 2950: Introduction to Data 
 
 -   Joanne Wang: Junior Biochemistry major and Data Science minor in the College of Arts and Sciences.
 -   Elisabeth Pan: Sophomore Information Science major concentrating in Data Science in the College of Agriculture and Life Sciences.
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
+-   Ivan Lin: Sophomore Information Science major concentrating in Data Science and Minoring in Business in the College of Arts and Sciences.
 -   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
 -   ...
