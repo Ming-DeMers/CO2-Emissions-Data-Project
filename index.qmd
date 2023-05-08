@@ -1,5 +1,5 @@
 ---
-title: "TEAM NAME"
+title: "IMPRESSIVE SQUIRTLE"
 subtitle: "INFO 2950 Project"
 format: html
 editor: visual
