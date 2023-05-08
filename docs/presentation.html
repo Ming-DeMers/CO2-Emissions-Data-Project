@@ -412,7 +412,7 @@ Impressive Squirtle <br> Cassidy Cheesman, Joanne Wang, Ming DeMers, Elisabeth P
 </section>
 <section id="inference-modeling-and-analysis" class="slide level2 smaller">
 <h2>Inference, Modeling, and Analysis</h2>
-<p>Research question: What is the relationship between GDP and CO2 emissions for developing versus developed countries in 2018?</p>
+<p>Research question: What is the association between GDP and CO2 emissions for developing versus developed countries in 2018?</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
@@ -422,7 +422,7 @@ Impressive Squirtle <br> Cassidy Cheesman, Joanne Wang, Ming DeMers, Elisabeth P
 2 Emissions.Production.CO2.Total -0.0000569  0.000192    -0.296  0.767 </code></pre>
 </div>
 </div>
-<p><span class="math display">\[ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) \]</span> The intercept can be interpreted as the log odds of a country being “developed” if total CO2 emissions is 0, which is <span class="math inline">\(-5.14 \times 10^{-1}\)</span>. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p.&nbsp;The odds, <span class="math inline">\(\frac {p}{1-p}\)</span>, of a country being “developed” if total CO2 emissions is 0 is <span class="math inline">\(e ^ {-5.14 \times 10 ^ {-1}}\)</span> where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is <span class="math inline">\(e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p\)</span>.</p>
+<p><span class="math display">\[ log(\frac{p}{1-p})=-5.14 \times 10^{-1} +(- 5.69 \times 10^{-5} \times total~CO2~emissions) \]</span> The intercept can be interpreted as the log odds of a country being “developed” if total CO2 emissions is 0, which is <span class="math inline">\(-5.14 \times 10^{-1}\)</span>. However, because we do not use or think in terms of log odds, we can further interpret this intercept by evaluating p.&nbsp;The odds, <span class="math inline">\(\frac {p}{1-p}\)</span>, of a country being “developed” if total CO2 emissions is 0 is <span class="math inline">\(e ^ {-5.14 \times 10 ^ {-1}}\)</span> which is 0.598, where p represents the probability that the country is developed. Thus, given that total CO2 emissions is 0, the probability a country is developed is <span class="math inline">\(e ^ {-5.14 \times 10 ^ {-1}} - e ^ {-5.14 \times 10 ^{-1}} p\)</span> or 0.37.</p>
 </section>
 <section id="section" class="slide level2" data-background-video="recorded-slide.mp4">
 <h2></h2>
