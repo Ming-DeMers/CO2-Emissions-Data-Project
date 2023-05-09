@@ -368,6 +368,12 @@ In developing nations, we tend to see industrialization, which means more burnin
 
 Reducing emissions is important to mitigate the impacts of climate change and limit the ever-increasing global temperature. This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair. Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
 
+Start off with C02 increase is steerper in devleoped than developing. (summarize what's in EDA) Which developes our first question, which turns out to be not significant.
+
+THen second
+
+And conclude
+
 # Limitations
 
 -   Not all 195 countries are in our dataset, which limits the scope of our dataset a bit.
