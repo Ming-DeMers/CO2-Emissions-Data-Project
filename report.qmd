@@ -374,4 +374,6 @@ Reducing emissions is important to mitigate the impacts of climate change and li
 
 -   The years within the dataset only range from 1992 to 2018, which could be a limitation because the range is 26 years, which may or may not be a long enough time period to see substantive changes in GDP or CO2 emissions. Additionally, this dataset does not contain data for more recent years, which could be another limitation if we want to see the most up-to-date data on GDP/emissions for different countries.
 
+-   We wanted to see the relationship between GDP and CO2 emissions for developed and developing countries, however, there was no exact GDP threshold to determine if a country is developed or not. Thus, we used the UN classification which takes GDP into account, but GDP is not the sole determining factor of whether a country is developing or not.
+
 # Acknowledgments
