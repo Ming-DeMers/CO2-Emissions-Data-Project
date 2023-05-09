@@ -33,7 +33,7 @@ Climate change is the biggest challenge facing our generation, with increased gl
 
 2.  Is the true proportion of countries with a CO2 emission greater than the US in the twentieth century different from those in the twenty-first century?
 
-*\*\*ADD BRIEF SUMMARY OF RESULTS*
+Through significance tests we discovered that in 2018, the proportion of industrialized countries with CO2 gas emissions exceeding 1000 kilotons differed from those with CO2 gas emissions below 1000 kilotons, although the data did not provide strong evidence for this claim. The data also offers strong proof that the true fraction of nations with CO2 emissions higher than those of the US in the twentieth century differed from those in the twenty-first.
 
 # Data description
 
@@ -311,7 +311,7 @@ null_dist |>
 
 ```
 
-Since the p-value is 0.766, which is greater than the significance level of 0.05, we fail to reject the null hypothesis. The data fails to provide convincing evidence that in 2018, the proportion of developed countries with CO2 gas emissions above 1000 kilotons is different than those with CO2 gas emissions below 1000 kilotons.
+Since the p-value is 0.766, which is greater than the significance level of 0.05, we fail to reject the null hypothesis. The data fails to provide convincing evidence that in 2018, the proportion of developed countries with CO2 gas emissions above 1000 kilotons is different from those with CO2 gas emissions below 1000 kilotons.
 
 ## Research Question Two
 
@@ -383,3 +383,5 @@ And conclude
 -   We wanted to see the relationship between GDP and CO2 emissions for developed and developing countries, however, there was no exact GDP threshold to determine if a country is developed or not. Thus, we used the UN classification which takes GDP into account, but GDP is not the sole determining factor of whether a country is developing or not.
 
 # Acknowledgments
+
+We would first like to express our sincere thanks to our section\'s graduate TA that has helped us every step of the way: Chi-Jung L. We would also like to acknowledge our peer reviewers Impressive Charmander and Impressive Togepi, who have provided us with constructive feedback to better our projects. We want to thank Professor Benjamin Soltoff for all the helpful AEs he walked us through. Lastly, we would like to acknowledge the Our World Our Data team for the report\'s dataset. Our report would not have been possible without the assistance of all those mentioned above.
