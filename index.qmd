@@ -5,4 +5,4 @@ format: html
 editor: visual
 ---
 
-Add project abstract here.
+It is a very scary time to be a young person. The current generation has inherited a world that is on the decline, and those in power seem to be doing little to nothing to alleviate the weight put on our shoulders. Climate change is a multi-faceted issue, and according to NASA, the dramatic increase of human-caused CO2 emissions is a key factor in the severity of this problem.

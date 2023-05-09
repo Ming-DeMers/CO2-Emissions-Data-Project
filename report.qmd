@@ -25,7 +25,7 @@ pollution <- read_csv("data/global_emissions.csv")
 
 # Introduction
 
-Climate change is the biggest challenge facing our generation, with increased global CO2 emissions being one of the leading contributors to this issue. According to NASA, "Carbon dioxide in the atmosphere warms the planet, causing climate change. Human activities have raised the atmosphere's carbon dioxide content by 50% in less than 200 years," and according to Climate.gov, " By adding more carbon dioxide to the atmosphere, people are supercharging the natural greenhouse effect, causing global temperature to rise." However, in order to combat the effects of climate change, we must first understand the data behind it. In our analysis, we intend to answer the following research questions:
+Climate change is the biggest challenge facing our generation, with increased global CO2 emissions being one of the leading contributors to this issue. According to NASA, "Carbon dioxide in the atmosphere warms the planet, causing climate change. Human activities have raised the atmosphere's carbon dioxide content by 50% in less than 200 years," and according to Climate.gov, "By adding more carbon dioxide to the atmosphere, people are supercharging the natural greenhouse effect, causing global temperature to rise." However, in order to combat the effects of climate change, we must first understand the data behind it. In our analysis, we intend to answer the following research questions:
 
 1.  In 2018, is the true proportion of developed countries with CO2 gas emissions above 1000 kilotons different than those with CO2 gas emissions below 1000 kilotons? The definition of developing versus devleoped countries will be as defined by the United Nations:
 
@@ -370,7 +370,7 @@ Reducing emissions is important to mitigate the impacts of climate change and li
 
 Start off with C02 increase is steerper in devleoped than developing. (summarize what's in EDA) Which developes our first question, which turns out to be not significant.
 
-THen second
+Then second
 
 And conclude
 
