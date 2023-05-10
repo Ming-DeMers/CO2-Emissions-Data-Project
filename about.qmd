@@ -10,4 +10,4 @@ This project was developed by **\[Toto\]** For [INFO 2950: Introduction to Data 
 -   Elisabeth Pan: Sophomore Information Science major concentrating in Data Science in the College of Agriculture and Life Sciences.
 -   Ivan Lin: Sophomore Information Science major concentrating in Data Science and Minoring in Business in the College of Arts and Sciences.
 -   Ming DeMers: Sophomore Information Science and English major in the College of Arts and Sciences.
--   Cassidy Cheesman: Junior Information Science major in the College of Arts and Sciences.
+-   Cassidy Cheesman: Junior Information Science major and Asian Studies minor in the College of Arts and Sciences.
