@@ -27,7 +27,7 @@ pollution <- read_csv("data/global_emissions.csv")
 
 Climate change is the biggest challenge facing our generation, with increased global CO2 emissions being one of the leading contributors to this issue. According to NASA, "Carbon dioxide in the atmosphere warms the planet, causing climate change. Human activities have raised the atmosphere's carbon dioxide content by 50% in less than 200 years," and according to Climate.gov, " By adding more carbon dioxide to the atmosphere, people are supercharging the natural greenhouse effect, causing global temperature to rise." However, in order to combat the effects of climate change, we must first understand the data behind it. In our analysis, we intend to answer the following research questions:
 
-1.  In 2018, is the true proportion of developed countries with CO2 gas emissions above 1000 kilotons different than those with CO2 gas emissions below 1000 kilotons? The definition of developing versus devleoped countries will be as defined by the United Nations:
+1.  In 2018, is the true proportion of developed countries with CO2 gas emissions above 1000 kilotons different than those with CO2 gas emissions below 1000 kilotons? The definition of developing versus developed countries will be as defined by the United Nations:
 
     https://www.un.org/en/development/desa/policy/wesp/wesp_current/2014wesp_country_classification.pdf?
 
@@ -39,11 +39,11 @@ Climate change is the biggest challenge facing our generation, with increased gl
 
 ### Motivation
 
-The dataset was created to show how emissions are changing in each country and allows for comparisons of various countries and regions in relation to overall emission trends along with their sources. The Our World in Data team created the original dataset on behalf of the Our World in Data project, which is a project of the Global Change Data Lab (a non-profit organization based in the United Kingdom), and the current dataset we will be using is a subset from the original dataset from the CORGIS Dataset Project created by Sam Donald. The Global Change Data Lab funded the creation of the dataset and it is a registered charity in England and Wales. Their work is made possible by donations of individuals and organizations that have made contributions to support their project.
+The dataset was created to show how emissions are changing in each country and allow for comparisons of various countries and regions in relation to overall emission trends along with their sources. The Our World in Data team created the original dataset on behalf of the Our World in Data project, which is a project of the Global Change Data Lab (a non-profit organization based in the United Kingdom). The current dataset we will be using is a subset from the original dataset from the CORGIS Dataset Project created by Sam Donald. The Global Change Data Lab funded the creation of the dataset, and it is a registered charity in England and Wales. Their work is made possible by donations from individuals and organizations that have contributed to their project.
 
 ### Composition
 
-The instances that comprise the dataset represent countries (per year from 1992 to 2018) and there are 2484 instances total. The observations (rows) are countries per year and the attributes (columns) are year, country name, country code, country GDP, country population, emissions production CH4, emissions production N2O, emissions production CO2 cement, emissions production CO2 coal, emissions production CO2 gas, emissions production CO2 oil, emissions production CO2 flaring, emissions production CO2 other, emissions production CO2 total, emissions global share CO2 cement, emissions global share CO2 coal, emissions global share CO2 gas, emissions global share CO2 oil, emissions global share CO2 flaring, emissions global share CO2 total.
+The dataset's instances represent countries (per year from 1992 to 2018), and there are 2484 instances in total. The observations (rows) are countries per year, and the attributes (columns) are year, country name, country code, country GDP, country population, emissions production CH4, emissions production N2O, emissions production CO2 cement, emissions production CO2 coal, emissions production CO2 gas, emissions production CO2 oil, emissions production CO2 flaring, emissions production CO2 other, emissions production CO2 total, emissions global share CO2 cement, emissions global share CO2 coal, emissions global share CO2 gas, emissions global share CO2 oil, emissions global share CO2 flaring, emissions global share CO2 total.
 
 ### Collection Process
 
@@ -53,7 +53,7 @@ The current dataset we will use depends on the datasets it was built off of and 
 
 ### Preprocessing/cleaning/labeling
 
-The various datasets that were the foundation for the original dataset underwent processing steps (the codes of which can be found at this website, https://github.com/owid/co2-data), the names of countries and regions were standardized, the carbon emissions were recalculated to CO2 (e.g. from tonnes of carbon to tonnes of CO2 using a conversion factor of 3.664), and per capita figures were calculated from the dataset's "Population" metric, which is included in the complete dataset and the population figures were sourced from Gapminder and the UN World Population Prospects (UNWPP). The current dataset we will use is a subset of the original dataset, with all the tonnes units converted into kilotons and the variable names altere
+The various datasets that were the foundation for the original dataset underwent processing steps (the codes of which can be found at this website, https://github.com/owid/co2-data), the names of countries and regions were standardized, the carbon emissions were recalculated to CO2 (e.g. from tonnes of carbon to tonnes of CO2 using a conversion factor of 3.664), and per capita figures were calculated from the dataset's "Population" metric, which is included in the complete dataset and the population figures were sourced from Gapminder and the UN World Population Prospects (UNWPP). The current dataset we will use is a subset of the original dataset, with all the tonnes units converted into kilotons and the variable names altered.
 
 The link for the software and code that was used to preprocess/clean/label the data: https://github.com/owid/co2-data
 
@@ -201,11 +201,11 @@ ggplot(data = pollution_vietnam,
   ) 
 ```
 
-Through visualizing the change in CO2 gas emissions over time for the two developed (United States and Japan) countries and the two developing countries (Pakistan and Vietnam), it can be seen that it appears that developing countries have a much higher rate of increase in CO2 gas emissions over time than developed countries do. Furthermore, as expected, despite higher rates of increase in the CO2 gas emissions over time for developing countries, developed countries tend to have much higher CO2 gas emissions overall than developing countries.
+Through visualizing the change in CO2 gas emissions over time for the two developed (United States and Japan) countries and the two developing countries (Pakistan and Vietnam), it can be seen that it appears that developing countries have a much higher rate of increase in CO2 gas emissions over time than developed countries do. Furthermore, as expected, despite higher rates of growth in CO2 gas emissions over time for developing countries, developed countries tend to have much higher CO2 gas emissions overall than developing countries.
 
-The observations above could indicate a possible correlation between GDP growth and an increase in CO2 gas emissions. It could also indicate that developed countries tend to produce much more CO2 gas than developing countries, contributing much more to climate change, but that there is a upward trend in development in developing countries that is also increasing CO2 gas emissions.
+The above observations could indicate a possible correlation between GDP growth and increased CO2 emissions. It could also suggest that developed countries produce much more CO2 gas than developing countries, contributing much more to climate change, but that there is an upward trend in development in developing countries that are also increasing CO2 gas emissions.
 
-To analyze the relationship between GDP and CO2 gas emissions for developing versus developed countries in 2018, we will utilize a logistic regression model. As there is no clear definition of a GDP threshold that determines whether a country is developed or developing, we will use the the United Nations' definition (https://www.un.org/en/development/desa/policy/wesp/wesp_current/2014wesp_country_classification.pdf?), since their definition takes a country's GDP into account.
+We will utilize a logistic regression model to analyze the relationship between GDP and CO2 gas emissions for developing versus developed countries in 2018. As there is no clear definition of a GDP threshold that determines whether a country is developed or developing, we will use the United Nations' definition (https://www.un.org/en/development/desa/policy/wesp/wesp_current/2014wesp_country_classification.pdf?), since their definition takes a country's GDP into account.
 
 ```{r}
 #| label: eda-2018-gdp-co2
@@ -272,9 +272,9 @@ Using the default decision-making threshold of 0.5 (that is, if the predicted pr
 
 ## Research Question One
 
-The first research question we will attempt to answer is: In 2018, is the true proportion of developed countries with CO2 gas emissions above 1000 kilotons different than those with CO2 gas emissions below 1000 kilotons? As there is no clear definition of a GDP threshold that determines whether a country is developed or developing, we will once again use the the United Nations' definition (https://www.un.org/en/development/desa/policy/wesp/wesp_current/2014wesp_country_classification.pdf?), since their definition takes a country's GDP into account. To attempt to answer this question, we will carry out a hypothesis test.
+The first research question we will attempt to answer is: In 2018, is the true proportion of developed countries with CO2 gas emissions above 1000 kilotons different than those with CO2 gas emissions below 1000 kilotons? As there is no clear definition of a GDP threshold determining whether a country is developed or developing, we will again use the United Nations' definition (https://www.un.org/en/development/desa/policy/wesp/wesp_current/2014wesp_country_classification.pdf?), since their definition takes a country's GDP into account. To answer this question, we will conduct a hypothesis test.
 
-Using the observed potential CO2 gas emission threshold of around 1000 kilotons from the logistic regression model, the null hypothesis is that in 2018, the true proportion of developed countries with CO2 gas emissions above 1000 kilotons is not different than those with CO2 gas emissions below 1000 kilotons, and the alternative hypothesis is that in 2018, the true proportion of developed countries with CO2 gas emissions above 1000 kilotons is different than those with CO2 gas emissions below 1000 kilotons. In proper notation:
+Using the observed potential CO2 gas emission threshold of around 1000 kilotons from the logistic regression model, the null hypothesis is that in 2018, the true proportion of developed countries with CO2 gas emissions above 1000 kilotons is not different than those with CO2 gas emissions below 1000 kilotons. The alternative hypothesis is that in 2018, the true proportion of developed countries with CO2 gas emissions above 1000 kilotons is different than those with CO2 gas emissions below 1000 kilotons. In proper notation:
 
 $$
 H_0 : p_a - p_b = 0
@@ -315,7 +315,7 @@ Since the p-value is 0.766, which is greater than the significance level of 0.05
 
 ## Research Question Two
 
-The second research question we will attempt to answer is if the true proportion of countries with a CO2 emission greater than the US in the twentieth century different from those in the twenty-first century. We will do this using a null hypothesis test. The null hypothesis is that there is no difference between the centuries, and the alternative hypothesis is the opposite: that there is a difference. In proper notation:
+The second research question we will attempt to answer is if the true proportion of countries with a CO2 emission greater than the US in the twentieth century is different from those in the twenty-first century. We will do this using a null hypothesis test. The null hypothesis is that there is no difference between the centuries, and the alternative hypothesis is the opposite: that there is a difference. In proper notation:
 
 $$
 H_0 : p_a - p_b = 0
@@ -356,23 +356,21 @@ null_dist |>
   get_p_value(obs_stat = point_estimate, direction = "two sided")
 ```
 
-Since the p-value is 0, which is less than the significance level of 0.05, we reject the null hypothesis in favor of the alternative hypothesis. The data provides convincing evidence that the true proportion of countries with a CO2 emission greater than the US in the twentieth century is different from those in the twenty-first century.
+Since the p-value is 0, which is less than the significance level of 0.05, we reject the null hypothesis in favor of the alternative hypothesis. The data provide convincing evidence that the true proportion of countries with a CO2 emission greater than the US in the twentieth century differs from those in the twenty-first century.
 
 # Interpretation and conclusions
 
-We find that there is indeed an increase in CO2 emissions, and that this increase is correlated to GDP of a country. Our data indicates a dramatic increase in CO2 emissions; for developing countries, a near-exponential increase, and for developed countries, a linear increase.
+We investigate the CO2 emissions of the world and its nations from 1992 - 2018. First, we create some graphs using the UN definition of developing/developed nations. Through our visualizations, GDP change over time for developing countries is increasing, but much faster than in developed countries. The same is for CO2 emissions, where both developed types of nations have increasing emissions. Still, developing nations have a much higher rate of increase (although developed countries have much higher emissions than developing nations in the first place). We found, with a logistic regression, that as a country's carbon emissions increase, the more likely it was developed.
 
-Regardless, according to the Intergovernmental Panel on Climate Change (IPCC), the United Nations Environment Program (UNEP), and the United States Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth's atmosphere and the subsequent climate change.
+We thus conducted a correlation test to see if the CO2 increase was steeper in developing or developed nations. However, the data and test statistics showed us that it was unlikely that there was a difference in proportion between developed countries with CO2 gas emissions above 1,000 kilotons and nations with emissions less than 1,000 kilotons.
 
-In developing nations, we tend to see industrialization, which means more burning of fossil fuels and deforestation, thus increasing CO2 emissions. Thus, we see increase in emission of these countries.
+Secondly, we investigate if the true proportion of nations with CO2 emissions greater than the US in the 20th century is different than those in the 21st century. In our 2-proportion test, there is indeed a likelihood that the proportion of nations with higher carbon emissions than the US is different between the two centuries.
 
-Reducing emissions is important to mitigate the impacts of climate change and limit the ever-increasing global temperature. This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair. Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
+We find that there is indeed an increase in CO2 emissions and that this increase is correlated to a country's GDP. Furthermore, our data indicate a dramatic rise in CO2 emissions; for developing countries, a near-exponential increase, and for developed countries, a linear increase.
 
-Start off with C02 increase is steerper in devleoped than developing. (summarize what's in EDA) Which developes our first question, which turns out to be not significant.
+Regardless, according to the United Nations Environment Program (UNEP) and the Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth's atmosphere and the subsequent climate change. Furthermore, in developing nations, we tend to see industrialization, which means more burning of fossil fuels and deforestation, thus increasing CO2 emissions. Therefore, we see an increase in emissions from these countries.
 
-THen second
-
-And conclude
+Reducing emissions is essential to mitigate the impacts of climate change and limit the ever-increasing global temperature. This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair. Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
 
 # Limitations
 
