@@ -163,60 +163,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyverse' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tibble' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'lubridate' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidymodels' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'broom' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dials' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'parsnip' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'recipes' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tune' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'workflowsets' was built under R version 4.2.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'yardstick' was built under R version 4.2.3</code></pre>
-</div>
+
 </div>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 2484 Columns: 20
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): Country.Name, Country.Code
-dbl (18): Year, Country.GDP, Country.Population, Emissions.Production.CH4, E...
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
@@ -291,35 +241,35 @@ dbl (18): Year, Country.GDP, Country.Population, Emissions.Production.CH4, E...
 <p>The average CO2 gas emissions for all countries (between 1992 and 2018) in the dataset were calculated and can be found in the second displayed tibble.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-gdp-developed-1.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-gdp-developed-1.png" class="img-fluid" width="384"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-gdp-developed-2.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-gdp-developed-2.png" class="img-fluid" width="384"></p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-gdp-developing-1.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-gdp-developing-1.png" class="img-fluid" width="384"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-gdp-developing-2.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-gdp-developing-2.png" class="img-fluid" width="384"></p>
 </div>
 </div>
 <p>Through visualizing the change in GDP over time for the two developed (United States and Japan) countries and the two developing countries (Pakistan and Vietnam), it can be seen that it appears that developing countries have a much higher rate of increase in GDP over time than developed countries do. However, as expected, the developing countries have much lower GDPs than developed countries in general.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-co2-developed-1.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-co2-developed-1.png" class="img-fluid" width="384"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-co2-developed-2.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-co2-developed-2.png" class="img-fluid" width="384"></p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-co2-developing-1.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-co2-developing-1.png" class="img-fluid" width="384"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/eda-co2-developing-2.png" class="img-fluid" width="672"></p>
+<p><img src="report_files/figure-html/eda-co2-developing-2.png" class="img-fluid" width="384"></p>
 </div>
 </div>
 <p>Through visualizing the change in CO2 gas emissions over time for the two developed (United States and Japan) countries and the two developing countries (Pakistan and Vietnam), it can be seen that it appears that developing countries have a much higher rate of increase in CO2 gas emissions over time than developed countries do. Furthermore, as expected, despite higher rates of growth in CO2 gas emissions over time for developing countries, developed countries tend to have much higher CO2 gas emissions overall than developing countries.</p>
@@ -396,12 +346,7 @@ H_A: p_a - p_b \neq 0
 \]</span></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="report_files/figure-html/research-question-two-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an
-approximation based on the number of `reps` chosen in the `generate()` step.
-See `?get_p_value()` for more information.</code></pre>
+<p><img src="report_files/figure-html/research-question-two-1.png" class="img-fluid" width="384"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
@@ -424,11 +369,7 @@ See `?get_p_value()` for more information.</code></pre>
 </section>
 <section id="limitations" class="level1">
 <h1>Limitations</h1>
-<ul>
-<li><p>Not all 195 countries are in our dataset, which limits the scope of our dataset a bit.</p></li>
-<li><p>The years within the dataset only range from 1992 to 2018, which could be a limitation because the range is 26 years, which may or may not be a long enough time period to see substantive changes in GDP or CO2 emissions. Additionally, this dataset does not contain data for more recent years, which could be another limitation if we want to see the most up-to-date data on GDP/emissions for different countries.</p></li>
-<li><p>We wanted to see the relationship between GDP and CO2 emissions for developed and developing countries, however, there was no exact GDP threshold to determine if a country is developed or not. Thus, we used the UN classification which takes GDP into account, but GDP is not the sole determining factor of whether a country is developing or not.</p></li>
-</ul>
+<p>We encountered a few minor limitations with our dataset. Not all 195 countries are in our dataset, which limits the scope of our dataset a bit. The years within the dataset only range from 1992 to 2018, which could be a limitation because the range is 26 years, which may or may not be a long enough time period to see substantive changes in GDP or CO2 emissions. Additionally, this dataset does not contain data for more recent years, which could be another limitation if we want to see the most up-to-date data on GDP/emissions for different countries. Moreover, we wanted to see the relationship between GDP and CO2 emissions for developed and developing countries, however, there was no exact GDP threshold to determine if a country is developed or not. Thus, we used the UN classification which takes GDP into account, but GDP is not the sole determining factor of whether a country is developing or not.</p>
 </section>
 <section id="acknowledgments" class="level1">
 <h1>Acknowledgments</h1>
