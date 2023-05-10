@@ -276,11 +276,7 @@ The first research question we will attempt to answer is: In 2018, is the true p
 
 Using the observed potential CO2 gas emission threshold of around 1000 kilotons from the logistic regression model, the null hypothesis is that in 2018, the true proportion of developed countries with CO2 gas emissions above 1000 kilotons is not different than those with CO2 gas emissions below 1000 kilotons. The alternative hypothesis is that in 2018, the true proportion of developed countries with CO2 gas emissions above 1000 kilotons is different than those with CO2 gas emissions below 1000 kilotons. In proper notation:
 
-$$
-H_0 : p_a - p_b = 0
-$$ $$
-H_A: p_a - p_b \neq 0
-$$
+$$ H_0 : p_a - p_b = 0 $$ $$ H_A: p_a - p_b \neq 0 $$
 
 ```{r}
 #| label: research-question-one
@@ -354,6 +350,7 @@ visualize(null_dist) +
 
 null_dist |>
   get_p_value(obs_stat = point_estimate, direction = "two sided")
+
 ```
 
 Since the p-value is 0, which is less than the significance level of 0.05, we reject the null hypothesis in favor of the alternative hypothesis. The data provide convincing evidence that the true proportion of countries with a CO2 emission greater than the US in the twentieth century differs from those in the twenty-first century.
@@ -370,13 +367,7 @@ We find that there is indeed an increase in CO2 emissions and that this increase
 
 Regardless, according to the United Nations Environment Program (UNEP) and the Environmental Protection Agency (EPA), Carbon dioxide emissions are problematic because they contribute to the warming of the Earth's atmosphere and the subsequent climate change. Furthermore, in developing nations, we tend to see industrialization, which means more burning of fossil fuels and deforestation, thus increasing CO2 emissions. Therefore, we see an increase in emissions from these countries.
 
-<<<<<<< HEAD
 Reducing emissions is essential to mitigate the impacts of climate change and limit the ever-increasing global temperature. This requires transitioning to renewable energy sources, improving energy efficiency, reducing deforestation, and promoting reforestation and eco-repair. Developing or developed, every nation has a duty to help protect and preserve the planet in which we all reside.
-=======
-Then second
-
-And conclude
->>>>>>> 32ec0edb0583be083b092a8663a4b8afb2b57483
 
 # Limitations
 
@@ -388,4 +379,4 @@ And conclude
 
 # Acknowledgments
 
-We would first like to express our sincere thanks to our section\'s graduate TA that has helped us every step of the way: Chi-Jung L. We would also like to acknowledge our peer reviewers Impressive Charmander and Impressive Togepi, who have provided us with constructive feedback to better our projects. We want to thank Professor Benjamin Soltoff for all the helpful AEs he walked us through. Lastly, we would like to acknowledge the Our World Our Data team for the report\'s dataset. Our report would not have been possible without the assistance of all those mentioned above.
+We would first like to express our sincere thanks to our section's graduate TA that has helped us every step of the way: Chi-Jung L. We would also like to acknowledge our peer reviewers Impressive Charmander and Impressive Togepi, who have provided us with constructive feedback to better our projects. We want to thank Professor Benjamin Soltoff for all the helpful AEs he walked us through. Lastly, we would like to acknowledge the Our World Our Data team for the report's dataset. Our report would not have been possible without the assistance of all those mentioned above.
